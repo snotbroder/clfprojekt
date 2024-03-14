@@ -1,3 +1,103 @@
 ---
 import "../styles/global.css";
+
+const { variant, state, animation } = Astro.props;
 ---
+
+<button class={variant + " " + state + animation}><slot /></button>
+
+<style>
+  button {
+    border-radius: 1px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:active {
+    cursor: grabbing;
+  }
+  /* Primary */
+  .primary {
+    background-color: var(--background-color-15);
+    color: white;
+    border: 1px solid var(--text-color);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    max-height: 4rem;
+    padding: 1rem;
+  }
+
+  .primary:hover {
+    color: var(--primary);
+    background-color: var(--background-color-50);
+
+    box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.49);
+    -webkit-box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.49);
+    -moz-box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.49);
+  }
+
+  .primary:active {
+    color: var(--text-color);
+    background-color: var(--primary-accent);
+
+    box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.25);
+    -webkit-box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.25);
+    -moz-box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.25);
+  }
+  /* Secondary */
+  .secondary {
+    background-color: var(--background-color-15);
+    color: white;
+    border: 1px solid var(--text-color);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.6rem;
+    max-height: 2rem;
+    padding: 0.8rem;
+  }
+  .secondary:hover {
+    color: var(--primary);
+    background-color: var(--background-color-50);
+  }
+  .secondary:active {
+    color: var(--text-color);
+    background-color: var(--primary-accent);
+  }
+
+  /* Displaybutton */
+  .displaybutton {
+    background-color: var(--teritary);
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    font-family: "nobel-condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3rem;
+    color: var(--text-color);
+  }
+  /* Hyperlink */
+  .hyperlink {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* State */
+  .buttonselected {
+    color: var(--text-color);
+    background-color: var(--primary-accent);
+    box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.25);
+    -webkit-box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.25);
+    -moz-box-shadow: 1px -1px 13px 1px rgba(217, 217, 217, 0.25);
+  }
+  .buttonselected:hover {
+    color: var(--text-color);
+    background-color: var(--primary-accent);
+  }
+</style>
