@@ -21,7 +21,15 @@ const { title } = Astro.props;
   </head>
   <body>
     <h2>MainLayout</h2>
-    <header></header>
+    <header>
+      <!-- hurtig nav bar for at navigere mellem siderne -->
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/map">MAP</a>
+        <a href="/mulitview">MULTIVIEW</a>
+        <a href="/product">PRODUCT</a>
+      </nav>
+    </header>
     <main>
       <h1>{title}</h1>
       <slot />
