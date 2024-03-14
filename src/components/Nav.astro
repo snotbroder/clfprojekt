@@ -1,0 +1,142 @@
+---
+const {header} = Astro.props;
+---
+
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Logo</a></div>
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <ul class="menu">
+              <li><a href="#">Program</a></li>
+              <li><a href="#">Besøg os</a></li>
+              <li><a href="#">Om os</a></li>
+              <li><a href="#">Kontakt</a></li>
+            </ul>
+          </nav>
+    </header>
+    
+    <style>
+header{
+    background-color: var(--background-color-50);
+    padding: 25px;}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+   text-align: center;}
+
+@media (min-width: 400px){
+nav ul{
+margin: 0;
+padding: 0;
+list-style: none;
+display: flex;
+justify-content:space-around;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 0.1px;
+    }
+}
+/*Header*/
+
+
+
+/* Nav */
+
+ .logo a{
+    font-family: 'nobel';
+    font-size: 24px;
+    color: white;
+}
+
+
+header nav {
+    background-color: var(--background-color-50);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;}
+
+header nav li {
+    font-family: 'nobel';}
+
+header nav {
+    font-family: 'nobel';}
+    
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+    margin-left: 100px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.menu a:hover {
+    color: gray;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Gemmer burgermenu ved stor skærm */
+@media screen and (min-width: 600px) {
+    input[type="checkbox"] {
+        display: none;
+    }
+}
+/* Gemmer burgermenu ved stor skærm */
+
+
+/* Viser burgermenu ved lille skærm */
+@media screen and (max-width: 599px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: var(--background-color-50);
+        z-index: 1;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked+.menu-icon+.menu {
+        display: flex;
+    }
+}
+    </style>
