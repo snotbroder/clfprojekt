@@ -1,4 +1,5 @@
 html {
+  /* Farver */
   --primary: #c44c97;
   --secondary: #0a8fc1;
   --teritary: #8c60f4;
@@ -9,9 +10,13 @@ html {
   --background-color-50: rgba(0, 3, 28, 0.5);
   --background-color-15: rgba(0, 3, 28, 0.015);
   --primary-40: rgba(196, 76, 151, 0.4);
+  /* Størrelse */
+  --mobile-L: 1rem;
+
+  --desktop-L: 5rem;
 }
 
-N-Regular {
+h {
   font-family: "nobel", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -21,10 +26,9 @@ N-RegularItalic {
   font-weight: 400;
   font-style: italic;
 }
-N-Bold {
+.display {
   font-family: "nobel", sans-serif;
   font-weight: 700;
-  font-style: italic;
 }
 
 N-RegularCondensed {
@@ -32,8 +36,34 @@ N-RegularCondensed {
   font-weight: 400;
   font-style: normal;
 }
-N-BoldCondensed {
+h2 {
   font-family: "nobel-condensed", sans-serif;
   font-weight: 700;
+  font-style: bold;
+}
+.bodytext-regular {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
+}
+
+.bodytext-bold {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--text-color);
+}
+main {
+  margin-left: var(--mobile-L);
+  margin-right: var(--mobile-L);
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  main {
+    margin-left: var(--desktop-L);
+    margin-right: var(--desktop-L);
+  }
 }
