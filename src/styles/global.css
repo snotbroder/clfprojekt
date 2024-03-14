@@ -78,7 +78,16 @@ main {
   margin-left: var(--mobile-L);
   margin-right: var(--mobile-L);
 }
-
+.multiview_galleri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: flex-start;
+}
+.multiview_galleri img {
+  height: 30rem;
+  width: auto;
+}
 /* Desktop */
 @media (min-width: 900px) {
   main {
