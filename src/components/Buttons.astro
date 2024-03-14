@@ -85,9 +85,15 @@ const { variant, state, animation } = Astro.props;
   .displaybutton:hover {
     color: var(--primary-accent);
 
-    box-shadow: 1px -1px 13px 4px rgba(140, 96, 244, 0.84);
-    -webkit-box-shadow: 1px -1px 13px 4px rgba(140, 96, 244, 0.84);
-    -moz-box-shadow: 1px -1px 13px 4px rgba(140, 96, 244, 0.84);
+    box-shadow: 1px -1px 25px 4px rgba(140, 96, 244, 0.84);
+    -webkit-box-shadow: 1px -1px 25px 4px rgba(140, 96, 244, 0.84);
+    -moz-box-shadow: 1px -1px 25px 4px rgba(140, 96, 244, 0.84);
+  }
+
+  .displaybutton:active {
+    box-shadow: -1px -1px 12px 5px rgba(10, 143, 193, 0.51);
+    -webkit-box-shadow: -1px -1px 12px 5px rgba(10, 143, 193, 0.51);
+    -moz-box-shadow: -1px -1px 12px 5px rgba(10, 143, 193, 0.51);
   }
   /* Hyperlink */
   .hyperlink {
