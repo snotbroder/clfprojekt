@@ -77,8 +77,17 @@ const { variant, state, animation } = Astro.props;
     font-family: "nobel-condensed", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--text-color);
+    outline: 1px solid var(--text-color);
+  }
+
+  .displaybutton:hover {
+    color: var(--primary-accent);
+
+    box-shadow: 1px -1px 13px 4px rgba(140, 96, 244, 0.84);
+    -webkit-box-shadow: 1px -1px 13px 4px rgba(140, 96, 244, 0.84);
+    -moz-box-shadow: 1px -1px 13px 4px rgba(140, 96, 244, 0.84);
   }
   /* Hyperlink */
   .hyperlink {
@@ -99,5 +108,10 @@ const { variant, state, animation } = Astro.props;
   .buttonselected:hover {
     color: var(--text-color);
     background-color: var(--primary-accent);
+  }
+
+  /* Animation */
+  .regularfade {
+    transition: 0.2s ease 0s;
   }
 </style>
