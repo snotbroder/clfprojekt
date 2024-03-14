@@ -1,3 +1,16 @@
+/* ------ css reset ------ */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 html {
   /* Farver */
   --primary: #c44c97;
@@ -19,6 +32,8 @@ html {
 
 body {
   background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "nobel", sans-serif;
 }
 
 /* Fonts */
@@ -64,11 +79,29 @@ main {
   margin-left: var(--mobile-L);
   margin-right: var(--mobile-L);
 }
-
+.multiview_galleri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: flex-start;
+}
+/* .multiview_galleri {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+/* gør billede slim */
+.multiview_galleri img {
+  height: 30rem;
+  width: auto;
+}
 /* Desktop */
 @media (min-width: 900px) {
   main {
     margin-left: var(--desktop-L);
     margin-right: var(--desktop-L);
   }
+  /* .multiview_galleri {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  } */
 }

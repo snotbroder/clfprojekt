@@ -1,0 +1,29 @@
+---
+const {titel} = Astro.props;
+---
+
+<article>
+   <slot />
+    <p class="card_title">{titel}</p>
+</article>
+    
+<style>
+    article {
+    width: 19rem;
+    border: 1px solid var(--text-color);  
+    position: relative;
+    overflow: hidden;
+  }
+article:hover{
+    box-shadow: 0px 0px 15px var(--text-color);
+}
+.card_title{
+    border-top: 1px solid var(--text-color);
+    padding: 1rem;
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Set the width of the positioned div */
+    background-color:#00031c84;
+}
+</style>
