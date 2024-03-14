@@ -9,10 +9,10 @@ const {titel} = Astro.props;
     
 <style>
     article {
-    width: 19rem;
     border: 1px solid var(--text-color);  
     position: relative;
     overflow: hidden;
+    width: 47.5%;
   }
 
 .card_title{
@@ -21,7 +21,12 @@ const {titel} = Astro.props;
     position: absolute;  
     bottom: 0;
     left: 0;
-    width: 100%; /* Set the width of the positioned div */
+    width: 100%;
     background-color:#00031c84;
+}
+@media (min-width: 900px) {
+    article{
+        width: 32%;
+    }
 }
 </style>

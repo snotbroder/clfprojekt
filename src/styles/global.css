@@ -84,15 +84,7 @@ main {
   gap: 0.9rem;
   justify-content: flex-start;
 }
-/* .multiview_galleri {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
-/* gør billede slim */
-.multiview_galleri img {
-  height: 30rem;
-  width: auto;
-}
+
 /* Desktop */
 @media (min-width: 900px) {
   main {
