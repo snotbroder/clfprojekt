@@ -1,3 +1,16 @@
+/* ------ css reset ------ */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 html {
   /* Farver */
   --primary: #c44c97;
