@@ -1,12 +1,14 @@
 ---
 import "../styles/global.css";
 import MainLayout from "../layouts/MainLayouts.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout>
-<article>
-    <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/01.-Du-som-er-i-Himlene-scaled.jpg" alt="">
-    <p>TITEL</p>
-</article>
-    
+	<Card titel="01. Du som er i Himlene!">
+        <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/01.-Du-som-er-i-Himlene-scaled.jpg" alt="">
+    </Card>
+    <Card titel="02. GAIA">
+        <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/02.-GAIA-scaled.jpg" alt="">
+    </Card>
 </MainLayout>

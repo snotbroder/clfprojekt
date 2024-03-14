@@ -1,0 +1,19 @@
+---
+const {titel} = Astro.props;
+---
+
+<article>
+   <slot />
+    <p>{titel}</p>
+</article>
+    
+<style>
+    article {
+        width: 50%;
+    border: 1px solid var(--text-color);
+    
+  }
+p{
+    border-top: 1px solid var(--text-color);
+}
+</style>
