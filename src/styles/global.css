@@ -1,0 +1,39 @@
+html {
+  --primary: #c44c97;
+  --secondary: #0a8fc1;
+  --teritary: #8c60f4;
+  --primary-accent: #01b3b8;
+  --secondary-accent: #f13c52;
+  --text-color: #f4f4f4;
+  --background-color: #00031c;
+  --background-color-50: rgba(0, 3, 28, 0.5);
+  --background-color-15: rgba(0, 3, 28, 0.015);
+  --primary-40: rgba(196, 76, 151, 0.4);
+}
+
+N-Regular {
+  font-family: "nobel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+N-RegularItalic {
+  font-family: "nobel", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+N-Bold {
+  font-family: "nobel", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+N-RegularCondensed {
+  font-family: "nobel-condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+N-BoldCondensed {
+  font-family: "nobel-condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
