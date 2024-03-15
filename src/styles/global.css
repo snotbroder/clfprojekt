@@ -59,6 +59,13 @@ h2 {
   font-size: 3rem;
   color: var(--text-color);
 }
+h3 {
+  font-family: "nobel-condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--text-color);
+}
 .bodytext-regular {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
