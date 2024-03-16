@@ -93,14 +93,54 @@ main {
   justify-content: flex-start;
 }
 
+/* hero section (tekst på baggrund) */
+.hero-img {
+  display: grid;
+  /*aspect-ratio: 80/100;*/
+  background-image: url(../../public/backgroundimg/heroimg_desktop.avif);
+  background-size: cover;
+  padding-bottom: 2%;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+  overflow: hidden;
+  height: 85vh;
+}
+/*container for tekst og knap til section
+gør så man kan align tekst og knap indenfor sit grid*/
+.hero-fill {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.hero-text h1 {
+  font-family: nobel;
+}
+
+.hero-button {
+  display: grid;
+  align-items: self-end;
+}
+.button {
+  aspect-ratio: 67/41;
+  background-image: url(../../public/icons/arrowdown.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: auto;
+  /*placerer item i midten*/
+  margin: auto;
+  transition: 0.5s;
+}
+.button:hover {
+  width: 3.5rem;
+  transition: 0.5s;
+}
+
 /* Desktop */
 @media (min-width: 900px) {
   main {
     margin-left: var(--desktop-L);
     margin-right: var(--desktop-L);
   }
-  /* .multiview_galleri {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  } */
 }
