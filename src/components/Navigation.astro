@@ -8,7 +8,7 @@ import Searchbar from "../components/Searchbar.astro"
     <nav class="navbar">
         <a href="/"><img class="nav-branding" src="../../public/logo.svg" alt="logo"></a>
         <ul class="nav-menu">
-            <li class="nav-item">
+            <li class="nav-item dropdown">
                 <NavigationsDropdown 
                 header = "Program" 
                 underknap1 = "Værker 2024" 
@@ -16,7 +16,7 @@ import Searchbar from "../components/Searchbar.astro"
                 underknap3 = "Kort 2024" 
                 underknap4 = "Tidligere programmer" />
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
                 <NavigationsDropdown 
                 header = "Besøg os" 
                 underknap1 = "Guidede ture 2024" 
@@ -24,7 +24,7 @@ import Searchbar from "../components/Searchbar.astro"
                 underknap3 = "Udforsk København" 
                 underknap4 = "FAQ" />
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
                 <NavigationsDropdown 
                 header = "Om os" 
                 underknap1 = "Hvem er vi?" 
@@ -33,7 +33,7 @@ import Searchbar from "../components/Searchbar.astro"
                 underknap4 = "Foto konkurrence 2024" 
                 underknap5 = "Permanente installationer" />
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
                 <NavigationsDropdown 
                 header = "Kontakt" 
                 underknap1 = "Kontakt"
@@ -42,8 +42,8 @@ import Searchbar from "../components/Searchbar.astro"
                 underknap4 = "Bliv vært for et kunstværk" 
                 underknap5 = "Personoplysninger" />
             </li>
-            <li class="nav-item">DA/EN</li>
-            <li class="nav-item"> <Searchbar /> </li>
+            <li class="nav-item sprog">DA/EN</li>
+            <li class="nav-item search"> <Searchbar /> </li>
         </ul>
         <div class="hamburger">
             <span class="bar"></span>
@@ -114,7 +114,8 @@ import Searchbar from "../components/Searchbar.astro"
     top: 9.1ch;
     gap: 0;
     flex-direction: column;
-    background-color: var(--background-color-50);
+background-image: url(../../public/backgroundimg/gradient3.webp);
+background-image: cover;
     width: 100%;
     text-align: center;
     transition: 0.3s;
@@ -129,6 +130,16 @@ import Searchbar from "../components/Searchbar.astro"
     margin: 35px 16px;
     border-bottom: var(--red) 1px solid;
   }
+  .search{
+    order:2;
+  }
+  .sprog{
+    order: 1;
+  }
+  .dropdown{
+    order: 3;
+  }
+
 }
 
 a,
