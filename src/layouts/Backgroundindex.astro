@@ -9,34 +9,72 @@ const {backgroundimg} = Astro.props;
             <div class="hero-text">
                 <h1>COPENHAGEN</h1>
               <h1>LIGHT</h1>
-              <h1>LIGHT</h1>
+              <h1>FESTIVAL</h1>
             </div>
-            <a class="hero-button" href= ""> <div class="button"> </div></a>
+            <a class="hero-button" href= "#cirkler"> <div class="button"> </div></a>
         </div>
     </section>
 
 <style>
+    h1{
+        font-size: 6rem;
+    }
+  .backgroundimg{
+    position: absolute;
+    left: 0;
+    top: 0;
+        display: inherit;
+        background-image: url("/public/backgroundimg/heroimg_mobil.avif");
+        background-size: cover;
+    height:99vh;
+    width: 120%;
+    z-index: -1;
+    transition: 0.5s;
+    pointer-events: none;
+    }
 
     .hero-img{
         height:95vh;
     width: 100%;
     }
-    .hero-fill{
-        display: ;
-    }
+
+
+/*container for tekst og knap til section
+gør så man kan align tekst og knap indenfor sit grid*/
+.hero-fill {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+  height: 80vh;
+}
+.hero-text h1 {
+  font-family: nobel;
+}
+
+.hero-button {
+  display: grid;
+  align-items: self-end;
+}
+.button {
+  aspect-ratio: 67/41;
+  background-image: url(../../public/icons/arrowdown.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: auto;
+  /*placerer item i midten*/
+  margin: auto;
+  transition: 0.5s;
+}
+.button:hover {
+  width: 3.5rem;
+  transition: 0.5s;
+}
 @media (min-width: 900px) {
     .backgroundimg{
-        position: absolute;
-    left: 0;
-    top: 0;
-        display: inherit;
         background-image: url("/public/backgroundimg/heroimg_desktop.avif");
         background-size: cover;
-    height:95vh;
-    width: 100%;
-    z-index: -1;
-    transition: 0.5s;
-    pointer-events: none;
     }
 }
     
