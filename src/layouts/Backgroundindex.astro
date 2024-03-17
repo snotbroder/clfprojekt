@@ -5,20 +5,34 @@ const {backgroundimg} = Astro.props;
   <section class="hero-img">
     <div class="backgroundimg"></div>
         <div class="hero-fill ">
+            <span class="dato">2. - 25. FEBRUAR</span>
             <span></span>
             <div class="hero-text">
-                <h1>COPENHAGEN</h1>
-              <h1>LIGHT</h1>
-              <h1>FESTIVAL</h1>
+                <h1 class="copenhagen">COPENHAGEN</h1>
+             <div class="lightfestival"> 
+                <h1 class="light">LIGHT</h1>
+              <h1 class="festival">FESTIVAL</h1>
             </div>
+              <h1 class="year"> 2024</h1>
+            </div>
+            
             <a class="hero-button" href= "#cirkler"> <div class="button"> </div></a>
         </div>
     </section>
 
 <style>
-    h1{
-        font-size: 6rem;
-    }
+.dato{
+    position: absolute;
+    z-index: -1;
+    font-family: "nobel-condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+    .hero-text h1 {
+  font-family: nobel;
+  font-size: 3rem;
+  transition: 0.2s ease-in;
+}
   .backgroundimg{
     position: absolute;
     left: 0;
@@ -27,14 +41,14 @@ const {backgroundimg} = Astro.props;
         background-image: url("/public/backgroundimg/heroimg_mobil.avif");
         background-size: cover;
     height:99vh;
-    width: 120%;
+    width: 100%;
     z-index: -1;
     transition: 0.5s;
     pointer-events: none;
     }
 
     .hero-img{
-        height:95vh;
+        height:87vh;
     width: 100%;
     }
 
@@ -46,11 +60,9 @@ gør så man kan align tekst og knap indenfor sit grid*/
   justify-content: center;
   text-align: center;
   gap: 3rem;
-  height: 80vh;
+  height: 88vh;
 }
-.hero-text h1 {
-  font-family: nobel;
-}
+
 
 .hero-button {
   display: grid;
@@ -71,11 +83,38 @@ gør så man kan align tekst og knap indenfor sit grid*/
   width: 3.5rem;
   transition: 0.5s;
 }
+
+.lightfestival{
+    display: flex;
+    gap: 1rem;
+}
 @media (min-width: 900px) {
+    .year{
+        display: none;
+    }
+    .dato{
+        display: none;
+    }
+    .lightfestival{
+    display: block;
+}
+    .hero-fill {
+  height: 80vh;
+}
+    .hero-text h1 {
+  font-size: 6rem;
+  transition: 0.2s ease-in;
+}
     .backgroundimg{
         background-image: url("/public/backgroundimg/heroimg_desktop.avif");
         background-size: cover;
     }
+    .copenhagen{
+        margin-right: 6rem;
+    }
+    .light{
+    margin-left: 30rem;
+  }
 }
     
 </style>
