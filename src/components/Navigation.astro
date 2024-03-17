@@ -6,7 +6,7 @@ import Searchbar from "../components/Searchbar.astro"
 
 <header>
     <nav class="navbar">
-        <a href="/"><img class="nav-branding" src="../../public/logo.svg" alt="logo"></a>
+        <a href="/"><img class="nav-branding" src="/logo.svg" alt="logo"></a>
         <ul class="nav-menu">
             <li class="nav-item dropdown">
                 <NavigationsDropdown 
@@ -111,11 +111,10 @@ import Searchbar from "../components/Searchbar.astro"
   .nav-menu {
     position: absolute;
     left: -100%;
-    top: 9.1ch;
+    top: 10ch;
     gap: 0;
     flex-direction: column;
-background-image: url(../../public/backgroundimg/gradient3.webp);
-background-image: cover;
+    background-image: url(/backgroundimg/colouredwave.webp);
     width: 100%;
     text-align: center;
     transition: 0.3s;

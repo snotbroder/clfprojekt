@@ -3,10 +3,10 @@ import "../styles/global.css";
 
 ---
 <div class="containersearch">
-<div class="searchicon"> <img src="../../public/icons/searchicon.svg" alt=""></div>
+<div class="searchicon"> <img src="/icons/searchicon.svg" alt=""></div>
 <div class="searchbar hide"> 
     <input type="text" placeholder="SØG...">
-     <img src="../../public/icons/close.svg" alt="close"> 
+     <img src="/icons/close.svg" alt="close"> 
     </div>
 </div>
 
@@ -54,6 +54,10 @@ input::placeholder{
         padding-top: 1rem;
     }
 @media (min-width: 900px) {
+    .searchbar img{
+display: block;
+width: 1rem;
+    }
   .searchicon {
     width: 1rem;
     margin-right: 0.5rem;

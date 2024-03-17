@@ -13,7 +13,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
   })
 );
 //searchbar popper op
-const searchicon = document.querySelectorAll(".searchicon");
+const searchicon = document.querySelector(".searchicon");
 const searchbar = document.querySelectorAll(".searchbar");
 
 window.addEventListener("load", sidenVises);
@@ -21,9 +21,8 @@ function sidenVises() {
   console.log("sidenvises");
   searchicon.addEventListener("mousedown", clickSearchIcon);
 }
-// click dropdown and it stays
-
 function clickSearchIcon() {
-  console.log(clickSearchIcon);
-  searchbar.classListt.remove("hide");
+  console.log("clickSearchIcon");
+  searchbar.classList.remove("hide");
 }
+// click dropdown and it stays
