@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Menu from "../components/Nav.astro"
 import Navigation from "../components/Navigation.astro"
-
+import Background from "../layouts/Backgroundindex.astro"
 const { title } = Astro.props;
 ---
 
@@ -22,9 +22,10 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>  <Navigation />
-    <h2>MainLayout</h2>
+
+    <!-- <h2>MainLayout</h2> -->
   
-    <Menu /> 
+    <!-- <Menu />  -->
     <main>
       <h1>{title}</h1>
       <slot />

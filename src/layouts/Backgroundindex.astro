@@ -1,0 +1,40 @@
+---
+const {backgroundimg} = Astro.props;
+---
+
+  <section class="hero-img">
+    <div class="backgroundimg"></div>
+        <div class="hero-fill ">
+            <span></span>
+            <div class="hero-text">
+                <h1>COPENHAGEN</h1>
+              <h1>LIGHT</h1>
+              <h1>LIGHT</h1>
+            </div>
+            <a class="hero-button" href= ""> <div class="button"> </div></a>
+        </div>
+    </section>
+
+<style>
+
+    .hero-img{
+        height:95vh;
+    width: 100%;
+    }
+@media (min-width: 900px) {
+    .backgroundimg{
+        position: absolute;
+    left: 0;
+    top: 0;
+        display: inherit;
+        background-image: url("/public/backgroundimg/heroimg_desktop.avif");
+        background-size: cover;
+    height:95vh;
+    width: 100%;
+    z-index: -1;
+    transition: 0.5s;
+    pointer-events: none;
+    }
+}
+    
+</style>
