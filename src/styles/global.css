@@ -12,6 +12,7 @@ img {
 }
 
 html {
+  scroll-behavior: smooth;
   /* Farver */
   --primary: #c44c97;
   --secondary: #0a8fc1;
