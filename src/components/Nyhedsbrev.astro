@@ -1,0 +1,90 @@
+---
+import "../styles/global.css";
+---
+<form>
+<div class="heading">
+    <h3>TILMELD DIG TIL VORES NYHEDSBREV</h3>
+    <img src="/icons/close.svg" alt="">
+</div>
+<div class="container">
+    <input class="email bodytext-regular" type="text" placeholder="Indtast email" name="mail" required >
+    <input type="submit" value="Tilmeld" class="bodytext-regular submit">
+  </div>
+</form>
+<style>
+    .heading{
+        display: flex;
+        flex-direction: column-reverse;
+    align-items: flex-end;
+    }
+    h3{
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+    }
+
+    img{
+        width: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+        top: 0;
+    }
+    form{
+       background-color: var(--background-color-50);
+       width: 55%;
+       padding: 1.2rem 1.6rem 1.8rem 1.6rem;
+       border-radius: 1rem;
+       position: fixed;
+       bottom:1rem;
+       right:1rem;
+       border: 1px solid var(--text-color);
+ 
+    }
+    .email{
+        padding: 0.3rem 1rem  0.3rem 1rem ;
+        width: 100%;
+        border-radius: 0.3rem;
+        border: 1px solid transparent;
+        font-size: 1rem;
+        background-color: var(--text-color);
+    }
+    textarea:focus, input:focus, .email{
+        color: var(--background-color);
+    }
+    .submit{
+        background-color: var(--background-color-50);
+        border: 1px solid var(--text-color);
+        padding: 0.3rem 0.2rem 0.3rem 0.2rem ;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    @media (min-width: 750px) {
+
+        form{
+            width: 45%;
+        }
+        .heading{
+        display: flex;
+        flex-direction: row;
+       justify-content: space-between;
+    }
+         h3{
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+    .email{
+        width: 80%;
+    }
+    .submit{
+        width: 21%;
+    }
+    }
+</style>
