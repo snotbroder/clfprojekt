@@ -13,16 +13,28 @@ document.querySelectorAll(".nav-link").forEach((n) =>
   })
 );
 //searchbar popper op
-const searchicon = document.querySelector(".searchicon");
-const searchbar = document.querySelectorAll(".searchbar");
+// const searchicon = document.querySelector(".searchicon");
+// const searchbar = document.querySelectors(".searchbar");
 
-window.addEventListener("load", sidenVises);
-function sidenVises() {
-  console.log("sidenvises");
-  searchicon.addEventListener("mousedown", clickSearchIcon);
-}
-function clickSearchIcon() {
-  console.log("clickSearchIcon");
-  searchbar.classList.remove("hide");
-}
+// window.addEventListener("load", sidenVises);
+// function sidenVises() {
+//   console.log("sidenvises");
+//   dropbtn.addEventListener("mousedown", clickDropbtn);
+//   searchicon.addEventListener("mousedown", clickSearchIcon);
+// }
+// function clickSearchIcon() {
+//   console.log("clickSearchIcon");
+//   searchbar.classList.remove("hide");
+// }
+
 // click dropdown and it stays
+// const dropbtn = document.querySelectorAll(".dropbtn");
+// const dropdowncontent = document.querySelectorAll(".dropdown-content");
+// function clickDropbtn() {
+//   console.log("clickDropbtn");
+//   dropdowncontent.style.display = "inherit";
+//   dropbtn.addEventListener("mousedown", clickDropbtn2close);
+// }
+// function clickDropbtn() {
+//   dropbtn.addEventListener("mousedown", clickDropbtn2close);
+// }

@@ -79,6 +79,7 @@ import Searchbar from "../components/Searchbar.astro"
   display: none;
   cursor: pointer;
   padding: 2ch;
+
 }
 .bar {
   display: block;
@@ -89,13 +90,16 @@ import Searchbar from "../components/Searchbar.astro"
   transition: all 0.3s ease-in-out;
   background-color: #f4f4f4;
   border-radius: 2px;
+ 
 }
 
 /*-------------mobil---------------*/
 @media (max-width: 900px) {
   /*-----------BURGERMENU SETTINGS----------*/
+
   .hamburger {
     display: block;
+    z-index: 1;
   }
   /*de tre streger bliver til et kryds*/
   .hamburger.active .bar:nth-child(2) {
@@ -111,21 +115,21 @@ import Searchbar from "../components/Searchbar.astro"
   .nav-menu {
     position: absolute;
     left: -100%;
-    top: 10ch;
+    /* top: 10ch; */
+    top:0;
     gap: 0;
     flex-direction: column;
     background-image: url(/backgroundimg/colouredwave.webp);
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
   }
   /*kommer frem, når den er active*/
   .nav-menu.active {
     left: 0;
-  }
 
-  .nav-item {
+  }
+    .nav-item {
     margin: 35px 16px;
     border-bottom: var(--red) 1px solid;
   }
@@ -138,6 +142,11 @@ import Searchbar from "../components/Searchbar.astro"
   .dropdown{
     order: 3;
   }
+.nav-branding{
+  position: absolute;
+  z-index: 1;
+  top: 0.7rem;
+}
 
 }
 
