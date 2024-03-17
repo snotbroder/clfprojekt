@@ -6,12 +6,93 @@ import Background from "../layouts/Backgroundindex.astro"
 
 <MainLayout>
     <Background />
-    <section id="cirkler">
-        
-    </section>
+    <article id="introduktion">
+<div class="grid_1fr-1fr">
+    <div>
+        <h1>COPENHAGEN <br> LIGHT FESTIVAL </h1>
+        <h3>2.- 25. FEBRUAR</h3>
+    </div>
+    <div class="index_textbox">
+        <div>    <p class="bodytext-regular">Copenhagen Light Festival er en årligt tilbagevendende festival for lys, der transformerer det stille og kolde vintermørke til en særlig fejring af lysende oplevelser midt i København.</p>
+        <a class="hyperlink" href="/">Læs mere om os her</a></div>
+    
+    </div>
+</div>
+    </article>
+    <article id="cirkler">
+        <div class="vaerker"><div><h2>VÆRKER</h2></div></div>
+        <div class="events"><div><h2>EVENTS</h2></div></div>
+        <div class="kort">
+            <div><h2>KORT</h2></div></div>
+    </article>
 <h1 class="display">Astro</h1>
 <h1>Dette er en header 1</h1>
 <h2>Dette er en header 2</h2>
 <h3>Dette er en header 3</h3>
 <p class="bodytext-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem iure, sit praesentium aut ipsam architecto cum. Placeat voluptatem dicta blanditiis, deserunt repellendus quis. Quibusdam reiciendis architecto amet nulla libero incidunt doloribus. Vitae, officiis. Libero tempora porro rem corrupti laudantium?</p>
 </MainLayout>
+
+<style>
+    #cirkler{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+      margin: auto;
+        gap: 1rem;
+
+    }
+    #cirkler h2{
+        font-size: 5cqw;
+    }
+    .vaerker div, .events div, .kort div{
+        display: flex;
+        align-self: center;
+    }
+    .vaerker{
+        display: flex;
+        justify-content: center;
+        background-image: url(/circlebuttons/circle_vaerker_default.avif);
+        background-size: cover;
+        aspect-ratio: 440/440;
+        width: 100%;
+    }
+    /* .vaerker:hover {
+        background-image: url(/circlebuttons/circle_vaerker_hover.avif);
+        background-size: cover;
+    } */
+    .events{
+        display: flex;
+        justify-content: center;
+        background-image: url(/circlebuttons/circle_events_default.avif);
+        background-size: cover;
+        aspect-ratio: 440/440;
+        width: 100%;
+    }
+    .kort{
+        display: flex;
+        justify-content: center;
+        background-image: url(/circlebuttons/circle_kort_default.avif);
+        background-size: cover;
+        aspect-ratio: 440/440;
+        width: 100%;
+    }
+    @media (min-width: 900px) {
+        .grid_1fr-1fr{
+            padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 80%;
+        margin: auto;
+    }
+    .grid_1fr-1fr h1, .grid_1fr-1fr h3{
+        text-align: right;
+    }
+    .index_textbox{
+        display: grid;
+      align-items: center;
+    }
+    }
+
+</style>
