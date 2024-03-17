@@ -1,36 +1,39 @@
 ---
-const {titel} = Astro.props;
+const { data } = Astro.props;
+console.log(data);
 ---
 
 <article>
-   <slot />
-    <p class="card_title">{titel}</p>
+  <a href="/{data.installationid}">
+    <img src={data.image} alt="" />
+    <h2>{data.displayname}</h2>
+  </a>
 </article>
-    
+
 <style>
-    article {
-    border: 1px solid var(--text-color);  
+  article {
+    border: 1px solid var(--text-color);
     position: relative;
     overflow: hidden;
     width: 47.5%;
     transition: 0.2s ease-in;
   }
-article:hover{
+  article:hover {
     box-shadow: 0px 0px 15px var(--text-color);
     transition: 0.2s ease-in;
-}
-.card_title{
+  }
+  .card_title {
     border-top: 1px solid var(--text-color);
     padding: 1rem;
-    position: absolute;  
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color:#00031c84;
-}
-@media (min-width: 900px) {
-    article{
-        width: 32%;
+    background-color: #00031c84;
+  }
+  @media (min-width: 900px) {
+    article {
+      width: 32%;
     }
-}
+  }
 </style>

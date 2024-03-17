@@ -2,21 +2,39 @@
 import "../styles/global.css";
 import MainLayout from "../layouts/MainLayouts.astro";
 import Card from "../components/Card.astro";
+
+const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfprojektDatabase", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtc2pxdnV5eHlrYXZwemZpbWxyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDQxNzcsImV4cCI6MjAyNjA4MDE3N30.zqi9zqOjYp3Us-cdJMfDCExuxOrcsg6VUG2HrMwBX_E",
+  },
+}).then((res) => res.json());
+// const data = await response.json();
+
+console.log(data);
 ---
 
 <MainLayout>
-    <div class="multiview_galleri">
-	<Card titel="01. Du som er i Himlene!">
-        <img src ="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/01.-Du-som-er-i-Himlene-scaled.jpg" alt="">
+  <div class="multiview_galleri">
+    {
+      data.map((installation) => {
+        return <Card data={installation} />;
+      })
+    }
+  </div>
+
+  <!-- <div class="multiview_galleri">
+    <Card titel="">
+      <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/01.-Du-som-er-i-Himlene-scaled.jpg" alt="" />
     </Card>
     <Card titel="02. GAIA">
-        <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/02.-GAIA-scaled.jpg" alt="">
+      <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/02.-GAIA-scaled.jpg" alt="" />
     </Card>
     <Card titel="03. PiXLEarth">
-        <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/03.-PiXLEarth-scaled.jpg" alt="">
+      <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/03.-PiXLEarth-scaled.jpg" alt="" />
     </Card>
     <Card titel="04. Bron, Broen, Bridge">
-        <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/04-BRON-3-scaled.jpg" alt="">
+      <img src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/04-BRON-3-scaled.jpg" alt="" />
     </Card>
-</div>
+  </div> -->
 </MainLayout>
