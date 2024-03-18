@@ -4,37 +4,45 @@ import "../styles/global.css";
 ---
 
 <article>
-    <h2>Mest Besøgte</h2>
+    <h3>MEST BESØGTE</h3>
     <div class="carousel-container">
-        <img id="arrow-left" class="arrow" src="arrow_left.svg" alt="">
+        <img id="arrow-left" class="arrow" src="/public/icons/arrow_left.svg" alt="">
         <img class="carousel-item" src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/03.-PiXLEarth-scaled.jpg" alt="">
         <img class="carousel-item" src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/02.-GAIA-scaled.jpg" alt="">
         <img class="carousel-item" src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/01.-Du-som-er-i-Himlene-scaled.jpg" alt="">
         <img class="carousel-item hidden" src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/04-BRON-3-scaled.jpg" alt="">
         <img class="carousel-item hidden" src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/07.-Vivid-Verve-1-1-scaled.jpg" alt="">
-        <img id="arrow-right" class="arrow" src="arrow_right.svg" alt="">
+        <img id="arrow-right" class="arrow" src="/public/icons/arrow_right.svg" alt="">
     </div>
 </article>
 
 <style>
-    .hidden{
+    .hidden {
         display: none;
     }
-    .arrow{
-        scale: 0.4;
+
+    .arrow {
+        margin-top: -35%;
+        scale: 0.2;
     }
 
-    .arrow:hover{
+    .arrow:hover {
         cursor: pointer;
     }
 
-    img{
-        max-width: 20%;
+    .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+    }
+
+    .carousel-item {
+        aspect-ratio: 1 / 1;
+        max-width: 100%;
         border-radius: 50%;
-        height: 200px;
-        width: 200px;
+        object-fit: cover; 
     }
 </style>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
