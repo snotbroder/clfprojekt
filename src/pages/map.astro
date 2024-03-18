@@ -5,14 +5,27 @@ import Slider from "../components/Slider.astro";
 import Footer from "../components/Footer.astro";
 import MainLayout from "../layouts/MainLayouts.astro";
 import Dropdown from "../components/Dropdown.astro";
+import Buttons from "../components/Buttons.astro";
+import Bydele from "../components/Bydele.astro";
 ---
 
 <MainLayout>
+    <h1>FESTIVAL MAP</h1>
+    <Bydele />
+        
 
+    <h2>RUTER</h2>
     <Dropdown />
+    
     <Kort />
     <Slider />
 
 
     <Footer />
 </MainLayout>
+
+<style>
+    h1{
+        text-align: center;
+    }
+</style>
