@@ -21,10 +21,15 @@ import Footer from "../components/Footer.astro";
 </div>
     </article>
     <article id="cirkler">
-        <div class="vaerker"><div><h2>VÆRKER</h2></div></div>
-        <div class="events"><div><h2>EVENTS</h2></div></div>
-        <div class="kort">
-            <div><h2>KORT</h2></div></div>
+        <a class="vaerker cirkel" href="">
+            <div><h2>VÆRKER</h2></div>
+        </a>
+        <a class="events cirkel" href="">
+            <div><h2>EVENTS</h2></div>
+        </a>
+        <a class="kort cirkel" href="">
+            <div><h2>KORT</h2></div>
+        </a>
     </article>
 <h1 class="display">Astro</h1>
 <h1>Dette er en header 1</h1>
@@ -37,12 +42,15 @@ import Footer from "../components/Footer.astro";
 </MainLayout>
 
 <style>
+    #cirkler a{
+        text-decoration: none;
+    }
     #cirkler{
         padding-top: 1rem;
         padding-bottom: 1rem;
         display: flex;
       margin: auto;
-        gap: 1rem;
+        gap: 2rem;
 
     }
     #cirkler h2{
@@ -52,34 +60,45 @@ import Footer from "../components/Footer.astro";
         display: flex;
         align-self: center;
     }
-    .vaerker{
+    .cirkel{
+        border: 1px solid var(--text-color);
+        border-radius: 100%;
+        aspect-ratio: 430/430;
+        width: 100%;
+        transition: 0.2s ease-in;
+    }
+    .vaerker {
         display: flex;
         justify-content: center;
-        background-image: url(/circlebuttons/circle_vaerker_default.avif);
+        background-image: url(/circlebuttons/circle_vaerker_default.webp);
         background-size: cover;
-        aspect-ratio: 440/440;
-        width: 100%;
     }
-    /* .vaerker:hover {
-        background-image: url(/circlebuttons/circle_vaerker_hover.avif);
-        background-size: cover;
-    } */
+    .vaerker:hover {
+        box-shadow: 0px 0px 4rem var(--secondary);
+        transition: 0.2s ease-in;
+    }
     .events{
         display: flex;
         justify-content: center;
-        background-image: url(/circlebuttons/circle_events_default.avif);
+        background-image: url(/circlebuttons/circle_events_default.webp);
         background-size: cover;
-        aspect-ratio: 440/440;
-        width: 100%;
+    }
+
+    .events:hover {
+        box-shadow: 0px 0px 4rem var(--secondary-accent);
+        transition: 0.2s ease-in;
     }
     .kort{
         display: flex;
         justify-content: center;
-        background-image: url(/circlebuttons/circle_kort_default.avif);
+        background-image: url(/circlebuttons/circle_map_default.webp);
         background-size: cover;
-        aspect-ratio: 440/440;
-        width: 100%;
     }
+    .kort:hover {
+        box-shadow: 0px 0px 4rem var(--teritary);
+        transition: 0.2s ease-in;
+    }
+   
     @media (min-width: 900px) {
         .grid_1fr-1fr{
             padding-top: 1rem;
