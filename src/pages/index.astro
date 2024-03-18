@@ -49,6 +49,33 @@ import Buttons from "../components/Buttons.astro";
 
    <article id="fotokonkurrence">
     <div class="container">
+        <div class="image-stack">
+          <div class="image-stack__item image-stack__item--bottom">
+            <img src="/collage/v3.avif" alt="">
+          </div>
+          <div class="image-stack__item image-stack__item--top">
+            <img src="/collage/v4.avif" alt="">
+          </div>
+          <div class="image-stack__item image-stack__item--3 v1" >
+            <img src="/collage/v1.avif" alt="">
+          </div>
+          <div class="image-stack__item image-stack__item--mid">
+            <img src="/collage/v2.avif" alt="">
+          </div>
+        </div>
+        <div class="text">
+            <h2>FOTOKONKURRENCE</h2>
+            <p class="bodytext-regular">
+                Igen i år inviterer vi lysfestivalens gæster, 
+                 til at dele billeder af jeres yndlings lysværker og stemningsbilleder
+                 fra jeres ture rundt i byen.
+            </p> 
+            <a class="hyperlink" href="/">Læs mere om fotokonkurrencen her</a>
+        </div>
+      </div>
+      
+
+    <!-- <div class="container">
         <div class="collage">
             <img class="v1" src="/collage/v1.avif" alt="installation">
             <img class="v2" src="/collage/v2.avif" alt="installation">
@@ -63,14 +90,9 @@ import Buttons from "../components/Buttons.astro";
                  fra jeres ture rundt i byen.
             </p> 
         </div>
-    </div>
+    </div> -->
    </article>
 
-<h1 class="display">Astro</h1>
-<h1>Dette er en header 1</h1>
-<h2>Dette er en header 2</h2>
-<h3>Dette er en header 3</h3>
-<p class="bodytext-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem iure, sit praesentium aut ipsam architecto cum. Placeat voluptatem dicta blanditiis, deserunt repellendus quis. Quibusdam reiciendis architecto amet nulla libero incidunt doloribus. Vitae, officiis. Libero tempora porro rem corrupti laudantium?</p>
 
 <Footer />
 
@@ -87,6 +109,7 @@ import Buttons from "../components/Buttons.astro";
         justify-content: center;
         gap: 2rem;
     }
+
     #cirkler a{
         text-decoration: none;
     }
@@ -138,35 +161,48 @@ import Buttons from "../components/Buttons.astro";
        display: flex;
        justify-content: center;
        padding-top: 1rem;
-       padding-bottom: 3rem;
+       padding-bottom: 3.5rem;
     }
 
 /*------ COLLAGE FOTOKONK -------*/
+.v1{
+    display: none;
+}
 #fotokonkurrence{
-    height: 200%;
+    background-image: url("/backgroundimg/backgroundcircles.avif");
+background-size: cover;
+padding-bottom: 3rem;
 }
-.container{
-    height: 500rem;
+.container {
+  width: 100%;
+  margin: 0 auto;
+
 }
-.collage{
-    /* position: absolute; */
-    height: 20%;
+.image-stack {
+  display: grid;
+  position: relative; 
+  grid-template-columns: repeat(12, 1fr);
 }
-.collage img{
-    /* position: relative; */
-    width: 45%;
+
+.image-stack__item--bottom {
+  grid-column: 5 / -1;
+  grid-row: 1;
 }
-.v2{
-    right: 1rem;
+.image-stack__item--mid {
+  grid-row: 1;
+  grid-column: 7 / -1;
+  padding-top: 100%; 
 }
-.v3{
-    right: 2rem;
-    top: 1rem;
+.image-stack__item--top {
+  grid-row: 1;
+  grid-column: 1 / span 8;
+  padding-top: 20%; 
 }
-/* .collage:nth-child(2){
-    position: relative;
-    right: 1rem;
-} */
+
+img {
+  width: 100%;
+  display: block;
+}
 /*------ DESKTOP VERSION -------*/
 
  @media (min-width: 900px) {
@@ -187,10 +223,40 @@ import Buttons from "../components/Buttons.astro";
         display: grid;
       align-items: center;
     }
-    }
     /*------ CIRKLER MED NAVIGATION -------*/
     #cirkler{
         display: flex;
         flex-wrap: nowrap;
     }
+
+    .v1{
+        display: block;
+    }
+    .image-stack__item--bottom {
+  grid-column: 5/ 10;
+  grid-row: 1;
+  order: 1;
+}
+.image-stack__item--mid {
+  grid-row: 1;
+  grid-column: 3 / span 3;
+  order: 2;
+}
+.image-stack__item--top {
+  grid-row: 1;
+  grid-column: 9 / span 4;
+  padding-top: 20%; 
+  order: 2;
+}
+.image-stack__item--3{
+    grid-row: 1;
+  grid-column: 1 / span 3;
+
+}
+#fotokonkurrence .text{
+    max-width: 50%;
+}
+    }
+
+
 </style>
