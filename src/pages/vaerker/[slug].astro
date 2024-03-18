@@ -1,0 +1,37 @@
+---
+import "../../styles/global.css";
+import MainLayout from "../../layouts/MainLayouts.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfprojektDatabase", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtc2pxdnV5eHlrYXZwemZpbWxyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDQxNzcsImV4cCI6MjAyNjA4MDE3N30.zqi9zqOjYp3Us-cdJMfDCExuxOrcsg6VUG2HrMwBX_E",
+    },
+  }).then((response) => response.json());
+
+  return data.map((vaerk) => {
+    return {
+      params: { slug: vaerk.slug },
+      props: { myData: vaerk },
+    };
+  });
+}
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<MainLayout title={myData.displayname}>
+  <h2>{myData.displayname}</h2><h3>{myData.neighborhood}, {myData.location}</h3>
+  <img src={myData.image} alt={myData.displayname} />
+  <h3>{myData.artist}</h3>
+  <p>{myData.text1}</p>
+  <p>{myData.text2}</p>
+  <p>{myData.text3}</p>
+  <p>{myData.text4}</p>
+
+  <p>Med hjælp fra: {myData.credits}</p>
+  <p>Tak til: {myData.sponsor}</p>
+  <p>{myData.social1}</p>
+  <p>{myData.social2}</p>
+</MainLayout>
