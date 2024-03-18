@@ -50,10 +50,10 @@ import Buttons from "../components/Buttons.astro";
    <article id="fotokonkurrence">
     <div class="container">
         <div class="collage">
-            <img src="/collage/v1.avif" alt="installation">
-            <img src="/collage/v2.avif" alt="installation">
-            <img src="/collage/v3.avif" alt="installation">
-            <img src="/collage/v4.avif" alt="installation">
+            <img class="v1" src="/collage/v1.avif" alt="installation">
+            <img class="v2" src="/collage/v2.avif" alt="installation">
+            <img class="v3" src="/collage/v3.avif" alt="installation">
+            <img class="v4" src="/collage/v4.avif" alt="installation">
         </div>
         <div>
             <h2>FOTOKONKURRENCE</h2>
@@ -141,7 +141,32 @@ import Buttons from "../components/Buttons.astro";
        padding-bottom: 3rem;
     }
 
-
+/*------ COLLAGE FOTOKONK -------*/
+#fotokonkurrence{
+    height: 200%;
+}
+.container{
+    height: 500rem;
+}
+.collage{
+    /* position: absolute; */
+    height: 20%;
+}
+.collage img{
+    /* position: relative; */
+    width: 45%;
+}
+.v2{
+    right: 1rem;
+}
+.v3{
+    right: 2rem;
+    top: 1rem;
+}
+/* .collage:nth-child(2){
+    position: relative;
+    right: 1rem;
+} */
 /*------ DESKTOP VERSION -------*/
 
  @media (min-width: 900px) {
