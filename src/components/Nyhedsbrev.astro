@@ -4,7 +4,7 @@ import "../styles/global.css";
 <form>
 <div class="heading">
     <h3>TILMELD DIG TIL VORES NYHEDSBREV</h3>
-    <img src="/icons/close.svg" alt="">
+    <img class="ikon" src="/icons/close.svg" alt="">
 </div>
 <div class="container">
     <input class="email bodytext-regular" type="text" placeholder="Indtast email" name="mail" required >
@@ -88,3 +88,8 @@ import "../styles/global.css";
     }
     }
 </style>
+
+<script>
+    const ikon = document.querySelector(".ikon");
+    ikon.addEventListener("mousedown", clickIkon)
+</script>
