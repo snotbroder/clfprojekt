@@ -42,19 +42,19 @@ import Footer from "../components/Footer.astro";
 </MainLayout>
 
 <style>
-    #cirkler a{
-        text-decoration: none;
-    }
-    #cirkler{
+     #cirkler{
         padding-top: 1rem;
         padding-bottom: 1rem;
         display: flex;
-      margin: auto;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
-
     }
+    #cirkler a{
+        text-decoration: none;
+    }
+ 
     #cirkler h2{
-        font-size: 5cqw;
     }
     .vaerker div, .events div, .kort div{
         display: flex;
@@ -64,7 +64,7 @@ import Footer from "../components/Footer.astro";
         border: 1px solid var(--text-color);
         border-radius: 100%;
         aspect-ratio: 430/430;
-        width: 100%;
+        width: 85%;
         transition: 0.2s ease-in;
     }
     .vaerker {
@@ -100,6 +100,10 @@ import Footer from "../components/Footer.astro";
     }
    
     @media (min-width: 900px) {
+        #cirkler{
+        display: flex;
+        flex-wrap: nowrap;
+    }
         .grid_1fr-1fr{
             padding-top: 1rem;
         padding-bottom: 1rem;
