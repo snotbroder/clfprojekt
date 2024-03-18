@@ -10,17 +10,20 @@ const {footer} = Astro.props;
                 <a href="https://www.instagram.com/cphlightfest/"><img src="./icons/instagram.svg" alt="instagram"></a>
                 <a href="https://www.youtube.com/@cphlightfest5395"><img src="./icons/youtube.svg" alt="youtube"></a>
             </section>
-            <section class="footer_p">
+            <section class="footer_p1">
                 <div class="footer_middle">
                 <hr> 
                 <br>
                 <p>@COPENHAGEN LIGHT FESTIVAL 2024</p>
                 </div>
+            </section>
+                <section class="footer_p2">
                 <p>Read our cookie polices</p>
                 <p>info@copenhagenlightfestival.org | Tlf. +45 25 55 66 04 </p>
-            </section>
+        </section>
             
         </article>
+
         <article class="footer_right">
             <section class="footer_links">
                 <ul class="link_menu">
@@ -50,7 +53,6 @@ footer::before {
     height: 1px;
     background-color: white; /* Farven på stregen */
 }
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -78,11 +80,15 @@ nav {
     width: 10%;
 }
 
-.footer_p {
+.footer_p1 {
     margin-top: 20px;
     line-height: 2;
 }
 
+.footer_p1 {
+    margin-top: 20px;
+    line-height: 2;
+}
 .link_menu {
     list-style-type: none;
     padding: 0;
@@ -100,8 +106,60 @@ nav {
     line-height: 2;
 }
 
-@media screen and (max-width: 600px) {
+/* Desktop-styling */
+@media screen and (min-width: 750px) {
+    footer {
+        border-top: 1px solid white; /* Tilføjer en hvid streg øverst i footer */
+        margin-top: 20px; /* Fjern den negative margin */
+    }
+    nav {
+    display: flex;
+    }
 
+    .footer_mobile {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.footer_p1 {
+    text-align: center; /* Center the text */
+}
+    .footer_left {
+        width: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center; /* Centrerer indholdet lodret */
+    }
+
+    .footer_middle {
+        width: auto;
+        text-align: center; /* Centrer teksten */
+    }
+
+    .footer_right {
+        display: flex;
+        align-items: flex-start; /* Justerer indholdet til toppen */
+        margin-left: auto; /* Flytter footer_links helt til højre */
+    }
+
+    .link_menu {
+        display: flex;
+        flex-direction: row; /* Stabler linkene vandret */
+        list-style: none; /* Fjerner punkttegnene foran linkene */
+        gap: 10px;
+    }
+
+    .link_menu li a {
+        color: white; /* Gør linkteksten hvid */
+        text-decoration: none; /* Fjerner understregningen fra linkene */
+    }
+
+    .link_menu li a:hover {
+        color: white; /* Bevarer linktekstens hvide farve ved hover */
+    }
 }
 
     </style>
