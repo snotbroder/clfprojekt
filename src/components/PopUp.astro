@@ -2,8 +2,8 @@
 import "../styles/global.css";
 const {pop_up} = Astro.props;
 ---
-<article class="box">
-    <div class="pop_up">
+<article class="box" >
+    <div class="pop_up" >
         <img class="ikon" src="/icons/close.svg" alt="">
         <h1>No. 52</h1>
         <img src="collage/pop_up.svg" alt="pop_up"> 
@@ -13,6 +13,10 @@ const {pop_up} = Astro.props;
 </article>
 
 <style>
+    .hide{
+        display: none;
+    }
+
     .box {
         display: block;
         background-color: var(--background-color-50);
@@ -68,14 +72,17 @@ const {pop_up} = Astro.props;
 </style>
 
 <script>
-    function showCard() {
-    console.log("showCard");}
+    window.addEventListener("load", closePopup);
 
-    const ikon = document.querySelector(".ikon");
-    const pop_up = document.querySelector(".pop_up");
-    ikon.addEventListener("mousedown", clickIkon);
+    function closePopup() {
+    const closeBtn = document.querySelector(".ikon");
+    const closeBox = document.querySelector(".box");
+    closeBtn.addEventListener("click", closeIcon);
+}
 
-    function clickIkon() {
-        console.log("clickIkon");
-    }
+function closeIcon() {
+    console.log("CloseIcon");
+    closeBox.classList.add("hide");
+}
+
 </script>

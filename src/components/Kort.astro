@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-
+import Popup from "../components/PopUp.astro";
 ---
 
     <article>
@@ -18,8 +18,15 @@ import "../styles/global.css";
             </div>
           </div>
     </article>
-    
+    <div id="hide">
+    <Popup  />
+</div>
     <style>
+
+#hide{
+        display: none;
+    }
+
     
     #container{
   position: relative;
@@ -118,9 +125,17 @@ import "../styles/global.css";
 
     function clickDots() {
     console.log("clickDots");
-        const dots = document.querySelectorAll(".dotCyan, .dotPink");
-        dots.forEach(dot => {
-        });
+    const dots = document.querySelectorAll(".dotCyan, .dotPink");
+    dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        showPopUp()
+    });
+}); }
+
+function showPopUp() {
+        console.log("showPopUp");
+        const popup = document.getElementById('hide');
+        popup.style.display = 'block';
     }
     </script>
 
