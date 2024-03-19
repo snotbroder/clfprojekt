@@ -18,6 +18,7 @@ import "../styles/global.css";
             </div>
           </div>
     </article>
+    
     <style>
     
     #container{
@@ -27,8 +28,6 @@ import "../styles/global.css";
   
   overflow: hidden;
 }
-
-
 
 #kort{
   position: absolute;
@@ -112,20 +111,17 @@ import "../styles/global.css";
     top: 20%;
     left: 50%;
 }
-
-
-
     </style>
+
     <script>
         window.addEventListener("load", clickDots);
 
     function clickDots() {
     console.log("clickDots");
-    document.querySelector(".dotCyan").addEventListener("click", showCard);
-    document.querySelector(".dotPink").addEventListener("click", showCard);
-}
-
-function showCard() {
-    console.log("showCard");}
-    
+        const dots = document.querySelectorAll(".dotCyan, .dotPink");
+        dots.forEach(dot => {
+        });
+    }
     </script>
+
+    

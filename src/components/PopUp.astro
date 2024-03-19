@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+const {pop_up} = Astro.props;
+---
+<article class="box">
+    <div class="pop_up">
+        <img class="ikon" src="/icons/close.svg" alt="">
+        <h1>No. 52</h1>
+        <img src="collage/pop_up.svg" alt="pop_up"> 
+        <bodtext-regular>Her kan du læse lidt om kunstværket</bodtext-regular>
+        <p>Læs mere her</p>
+    </div>
+</article>
+
+<style>
+    .box {
+        display: block;
+        background-color: var(--background-color-50);
+        width: 300px;
+        height: 25rem;
+        position: absolute;
+        top: 40rem; /* Justér positionen efter behov */
+        left: 75%; /* Justér positionen efter behov */
+        transform: translate(-50%, -50%); /* Centrer elementet */
+    }
+
+    .pop_up {
+        position: relative;
+        padding: 40px;
+    }
+
+    .pop_up h1, p {
+    float: right;
+}
+
+.pop_up img {
+    width: 100%;
+}
+
+.pop_up p {
+    color: #0a8fc1;;
+    margin-top: 30px;
+}
+
+.ikon {
+    position: absolute;
+    top: 10px;
+    right: -120px;
+    width: 20px;
+    height: 25px;
+    background-image: url('path/to/your/close-icon.svg'); /* Erstat med din egen close-icon */
+    background-size: cover;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
+    .box {
+        display: block;
+        background-color: var(--background-color-50);
+        width: 300px;
+        height: 25rem;
+        position: absolute;
+        top: 45rem; /* Justér positionen efter behov */
+        left: 75%; /* Justér positionen efter behov */
+        transform: translate(-50%, -50%); /* Centrer elementet */
+    } 
+}
+</style>
+
+<script>
+    function showCard() {
+    console.log("showCard");}
+
+    const ikon = document.querySelector(".ikon");
+    const pop_up = document.querySelector(".pop_up");
+    ikon.addEventListener("mousedown", clickIkon);
+
+    function clickIkon() {
+        console.log("clickIkon");
+    }
+</script>
