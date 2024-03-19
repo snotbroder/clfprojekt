@@ -15,7 +15,14 @@ import Bydele from "../components/Bydele.astro";
         
 
     <h2>RUTER</h2>
-    <Dropdown />
+    <div id="grid_3">
+    <Buttons variant="secondary"> Cykel ruter
+    <Buttons variant="secondary"> Gå ruter
+    <Buttons variant="secondary"> Bus ruter
+    </div>
+
+    <Dropdown /> 
+    
     
     <Kort />
     <Slider />
@@ -25,6 +32,13 @@ import Bydele from "../components/Bydele.astro";
 </MainLayout>
 
 <style>
+
+    #grid_3{
+        display: grid;
+            grid-template-columns: 1fr 1fr 1fr ; 
+            gap: 2rem;
+    }
+
     h1{
         text-align: center;
     }
