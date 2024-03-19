@@ -2,6 +2,7 @@
 import "../../styles/global.css";
 import MainLayout from "../../layouts/MainLayouts.astro";
 import Button from "../../components/Buttons.astro";
+import Kort from "../../components/Kort.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfprojektDatabase", {
@@ -27,7 +28,7 @@ console.log(myData);
     <div class="grid1-1">
       <div class="col1">
         <div class="alignright">
-          <h1 class="display">{myData.displayname}</h1><h3>{myData.neighborhood}, {myData.location}</h3>
+          <h1 class="display2">{myData.installationid}. {myData.displayname}</h1><h3>{myData.neighborhood}, {myData.location}</h3>
         </div>
         <p class="bodytext-regular">{myData.text1}</p>
       </div>
@@ -37,9 +38,10 @@ console.log(myData);
     </div>
     <div class="grid1-1">
       <div class="col1">
-        KORT
+        <Kort />
         <Button variant="primary" state="" animation="">Se forslåede ruter</Button>
-      </div><div class="col2">
+      </div>
+      <div class="col2">
         <div class="faktabox bodytext-bold">
           <p class="highlight">Hvem:</p><p>{myData.artist}</p><br />
           <p class="highlight">Hvor:</p><p>{myData.location}</p><br />
@@ -50,8 +52,8 @@ console.log(myData);
       </div>
     </div>
     <div class="grid1-1">
-      <div class="col1"><p class="bodytext-regular">{myData.text3}</p></div>
-      <div class="col2"><p class="bodytext-regular">{myData.text4}</p></div>
+      <div class="col1"><p class="bodytext-regular">{myData.text3}</p><p class="bodytext-regular">{myData.text4}</p></div>
+      <div class="col2"></div>
     </div>
 
     <p>Med hjælp fra: {myData.credits}</p>
@@ -80,12 +82,16 @@ console.log(myData);
     text-align: right;
   }
   .faktabox {
-    background-color: var(--background-color-15);
+    background-color: var(--background-color-50);
     padding: 2rem;
     color: var(--text-color);
   }
 
   .highlight {
     color: var(--primary-accent);
+  }
+  p {
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
   }
 </style>

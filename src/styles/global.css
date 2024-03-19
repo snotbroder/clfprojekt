@@ -45,6 +45,13 @@ body {
   color: var(--text-color);
 }
 
+.display2 {
+  font-family: "nobel", sans-serif;
+  font-weight: 900;
+  font-size: 6rem;
+  color: var(--text-color);
+}
+
 h1 {
   font-family: "nobel-condensed", sans-serif;
   font-weight: 700;
@@ -77,6 +84,7 @@ h3 {
   font-style: normal;
   font-size: 1rem;
   color: var(--text-color);
+  line-height: 1.35rem;
 }
 
 .bodytext-bold {
@@ -85,6 +93,7 @@ h3 {
   font-weight: 700;
   font-style: normal;
   color: var(--text-color);
+  line-height: 1.35rem;
 }
 /* Hyperlink */
 .hyperlink {
