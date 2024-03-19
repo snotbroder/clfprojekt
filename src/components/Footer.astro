@@ -11,6 +11,7 @@ const {footer} = Astro.props;
                 <a href="https://www.youtube.com/@cphlightfest5395"><img src="./icons/youtube.svg" alt="youtube"></a>
             </section>
             <section class="footer_p1">
+                <div></div>
                 <div class="footer_middle">
                 <hr> 
                 <br>
@@ -42,6 +43,8 @@ const {footer} = Astro.props;
     <style>
 footer {
     position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 footer::before {
@@ -75,9 +78,12 @@ nav {
 .footer_left {
     margin: 5px; 
 }
+ hr {
+    width: 80%;
+}
 
-.footer_left hr {
-    width: 10%;
+.footer_p2 {
+    width: 75%;
 }
 
 .footer_p1 {
@@ -85,10 +91,6 @@ nav {
     line-height: 2;
 }
 
-.footer_p1 {
-    margin-top: 20px;
-    line-height: 2;
-}
 .link_menu {
     list-style-type: none;
     padding: 0;
@@ -108,6 +110,7 @@ nav {
 
 /* Desktop-styling */
 @media screen and (min-width: 750px) {
+ 
     footer {
     border-top: 1px solid white; /* Tilføjer en hvid streg øverst i footer */
     margin: -20px;
@@ -147,6 +150,7 @@ nav {
     align-items: flex-end; /* Justerer indholdet til højre side */
 }
 
+<<<<<<< HEAD
 .link_menu {
     display: flex; /* Placerer linkene vandret */
     list-style: none; /* Fjerner punkttegnene foran linkene */
@@ -168,6 +172,47 @@ nav {
 .link_menu li a:hover {
     color: white; /* Bevarer linktekstens hvide farve ved hover */
 }
+=======
+.footer_p1 {
+    text-align: center; /* Center the text */
+    display: flex;
+    justify-content: space-between;
+}
+    .footer_left {
+        width: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center; /* Centrerer indholdet lodret */
+    }
+
+    .footer_middle {
+        width: auto;
+        text-align: center; /* Centrer teksten */
+    }
+
+    .footer_right {
+        display: flex;
+        align-items: flex-start; /* Justerer indholdet til toppen */
+        margin-left: auto; /* Flytter footer_links helt til højre */
+    }
+
+    .link_menu {
+        display: flex;
+        flex-direction: row; /* Stabler linkene vandret */
+        list-style: none; /* Fjerner punkttegnene foran linkene */
+        gap: 10px;
+    }
+
+    .link_menu li a {
+        color: white; /* Gør linkteksten hvid */
+        text-decoration: none; /* Fjerner understregningen fra linkene */
+    }
+
+    .link_menu li a:hover {
+        color: white; /* Bevarer linktekstens hvide farve ved hover */
+    }
+>>>>>>> 469c793acb01fa6efe0ef0f7ae51b42a1ffba1ce
 }
 
     </style>

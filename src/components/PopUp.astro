@@ -2,17 +2,25 @@
 import "../styles/global.css";
 const {pop_up} = Astro.props;
 ---
-<article class="box">
-    <div class="pop_up">
+<div class="popUpClose">
+<article class="box" >
+    <div class="pop_up" >
+        <div id="close">
         <img class="ikon" src="/icons/close.svg" alt="">
+        </div>
         <h1>No. 52</h1>
         <img src="collage/pop_up.svg" alt="pop_up"> 
         <bodtext-regular>Her kan du læse lidt om kunstværket</bodtext-regular>
         <p>Læs mere her</p>
     </div>
 </article>
+</div>
 
 <style>
+    .hide{
+        display: none;
+    }
+
     .box {
         display: block;
         background-color: var(--background-color-50);
@@ -48,9 +56,8 @@ const {pop_up} = Astro.props;
     right: -120px;
     width: 20px;
     height: 25px;
-    background-image: url('path/to/your/close-icon.svg'); /* Erstat med din egen close-icon */
-    background-size: cover;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 @media screen and (min-width: 750px) {
@@ -68,14 +75,18 @@ const {pop_up} = Astro.props;
 </style>
 
 <script>
-    function showCard() {
-    console.log("showCard");}
+    window.addEventListener("load", closePopup);
+    const closeBtn = document.querySelector("#close");
+    const closeBox = document.querySelector(".popUpClose");
 
-    const ikon = document.querySelector(".ikon");
-    const pop_up = document.querySelector(".pop_up");
-    ikon.addEventListener("mousedown", clickIkon);
+    function closePopup() {
+    console.log("ClosePopup");
+    closeBtn.addEventListener("click", closeIcon);
+}
 
-    function clickIkon() {
-        console.log("clickIkon");
-    }
+function closeIcon() {
+    console.log("closeIcon");
+    closeBox.classList.add("hide");
+}
+
 </script>
