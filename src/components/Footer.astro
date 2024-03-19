@@ -51,7 +51,7 @@ const {footer} = Astro.props;
         <p>@COPENHAGEN LIGHT FESTIVAL 2024</p>
     </article>
     <article class="footerright">
-        <ul class="link_menu">
+        <ul class="linkmenu">
           <li><a href="#">HOME</a></li>
           <li><a href="#">PROGRAM</a></li>
           <li><a href="#">PARTNERS</a></li>
@@ -111,12 +111,13 @@ nav {
 }
 
 .footer_p2 {
-    width: 75%;
+    width: 50%;
 }
 
 .footer_p1 {
-    margin-top: 20px;
-    line-height: 2;
+    margin-top: 18px;
+    line-height: 1.5;
+    width: 85%;
 }
 
 .link_menu {
@@ -137,22 +138,26 @@ nav {
 }
 
 /* Desktop-styling */
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1200px) {
+    footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
     .footerdesktop {
         display: block;
     }
     .footermobil {
         display: none;
     }
-        footer {
+        .footerdesktop {
     border-top: 1px solid white; /* Tilføjer en hvid streg øverst i footer */
     margin: -20px;
     margin-top: 20px;
         }
 
 .footer_icons {
-    width: 30px;
-    margin-top: 15px;
+    width: 40px;
+    margin-top: -60px;
     margin-left: 60px;
     gap: 5px;
     display: flex; /* Anvend flexbox */
@@ -161,7 +166,7 @@ nav {
 }
 .footermiddle {
     position: relative; /* Gør positionen relativ for at kunne placere pseudoelementet */
-    text-align: center; /* Centrer tekst i midten */
+    margin-left: 300px;
     margin-top:4rem; /* Sæt afstand over artiklen til auto for at placere den nederst */
     margin-bottom: -50px; /* Justerer bundmarginen */
 }
@@ -183,25 +188,26 @@ nav {
     align-items: flex-end; /* Justerer indholdet til højre side */
 }
 
-.link_menu {
+.linkmenu {
     display: flex; /* Placerer linkene vandret */
+    justify-content: space-between;
     list-style: none; /* Fjerner punkttegnene foran linkene */
     margin-top: -60px;
     margin-bottom: 10px;
-    gap: 5px;
+    gap: 1rem;
     padding: 0;
 }
 
-.link_menu li {
-    margin-right: 20px; /* Tilføjer lidt mellemrum mellem linkene */
+.linkmenu li {
+   
 }
 
-.link_menu li a {
+.linkmenu li a {
     color: white; /* Gør linkteksten hvid */
     text-decoration: none; /* Fjerner understregningen fra linkene */
 }
 
-.link_menu li a:hover {
+.linkmenu li a:hover {
     color: white; /* Bevarer linktekstens hvide farve ved hover */
 }
 }
