@@ -7,6 +7,7 @@ import MainLayout from "../layouts/MainLayouts.astro";
 import Dropdown from "../components/Dropdown.astro";
 import Buttons from "../components/Buttons.astro";
 import Bydele from "../components/Bydele.astro";
+import PopUp from "../components/PopUp.astro";
 ---
 
 <MainLayout>
@@ -15,7 +16,14 @@ import Bydele from "../components/Bydele.astro";
         
 
     <h2>RUTER</h2>
-    <Dropdown />
+    <div id="grid_3">
+        <Dropdown dropdownname="Cykel ruter" /> 
+        <Dropdown dropdownname="Gå ruter" /> 
+        <Dropdown dropdownname="Bus ruter" /> 
+    </div>
+
+    
+    
     
     <Kort />
     <Slider />
@@ -25,6 +33,14 @@ import Bydele from "../components/Bydele.astro";
 </MainLayout>
 
 <style>
+
+
+    #grid_3{
+        display: grid;
+            grid-template-columns: 1fr 1fr 1fr ; 
+            gap: 1rem;
+    }
+
     h1{
         text-align: center;
     }

@@ -4,7 +4,6 @@ import Menu from "../components/Nav.astro"
 import Navigation from "../components/Navigation.astro"
 import Nyhedsbrev from "../components/Nyhedsbrev.astro"
 import Background from "../layouts/Backgroundindex.astro"
-import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
 
@@ -23,15 +22,20 @@ const { title } = Astro.props;
     <!-- Title -->
     <title>{title}</title>
   </head>
-  <body>  <Navigation />
+  <body>
+    <Navigation />
     <!-- <h2>MainLayout</h2> -->
     <!-- <Menu />  -->
     <main>
       <Nyhedsbrev />
-      <h1>{title}</h1>
+
       <slot />
-    </main> 
-    <script src="../scripts/header.js"> </script>
+    </main>
+    <script src="../scripts/header.js"></script>
   </body>
- 
 </html>
+<style>
+  body {
+    background-image: url(../../public/backgroundimg/backgroundcircles.avif);
+  }
+</style>
