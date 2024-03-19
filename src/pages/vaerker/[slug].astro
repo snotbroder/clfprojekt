@@ -3,6 +3,7 @@ import "../../styles/global.css";
 import MainLayout from "../../layouts/MainLayouts.astro";
 import Button from "../../components/Buttons.astro";
 import Kort from "../../components/Kort.astro";
+import Footer from "../components/Footer.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfprojektDatabase", {
@@ -51,8 +52,12 @@ console.log(myData);
         <p class="bodytext-regular">{myData.text2}</p>
       </div>
     </div>
+
     <div class="grid1-1">
-      <div class="col1"><p class="bodytext-regular">{myData.text3}</p><p class="bodytext-regular">{myData.text4}</p></div>
+      <div class="col1">
+        <p class="bodytext-regular">{myData.text3}</p>
+        <p class="bodytext-regular">{myData.text4}</p>
+      </div>
       <div class="col2"></div>
     </div>
 
@@ -61,37 +66,37 @@ console.log(myData);
     <p>{myData.social1}</p>
     <p>{myData.social2}</p>
   </div>
+
+  <style>
+    @media (min-width: 900px) {
+      .grid1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .extrapadding {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+    img {
+      width: 100%;
+    }
+    .alignright {
+      text-align: right;
+    }
+    .faktabox {
+      background-color: var(--background-color-50);
+      padding: 2rem;
+      color: var(--text-color);
+    }
+
+    .highlight {
+      color: var(--primary-accent);
+    }
+    p {
+      padding-bottom: 0.2rem;
+      padding-top: 0.2rem;
+    }
+  </style>
 </MainLayout>
-
-<style>
-  @media (min-width: 900px) {
-    .grid1-1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .extrapadding {
-      padding-left: 5rem;
-      padding-right: 5rem;
-    }
-  }
-  img {
-    width: 100%;
-  }
-  .alignright {
-    text-align: right;
-  }
-  .faktabox {
-    background-color: var(--background-color-50);
-    padding: 2rem;
-    color: var(--text-color);
-  }
-
-  .highlight {
-    color: var(--primary-accent);
-  }
-  p {
-    padding-bottom: 0.2rem;
-    padding-top: 0.2rem;
-  }
-</style>
