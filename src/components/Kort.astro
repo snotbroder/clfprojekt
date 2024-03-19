@@ -1,127 +1,122 @@
 ---
 import "../styles/global.css";
-
 ---
 
-    <article>
-        <div id="container">
-            <div id="kort"></div>
-            <div id="dots">
-              <div id="dot1" class="dotCyan"></div>
-              <div id="dot2" class="dotCyan"></div>
-              <div id="dot3" class="dotCyan"></div>
-              <div id="dot4" class="dotCyan"></div>
-              <div id="dot5" class="dotPink"></div>
-              <div id="dot6" class="dotPink"></div>
-              <div id="dot7" class="dotPink"></div>
-              <div id="dot8" class="dotPink"></div>
-            </div>
-          </div>
-    </article>
-    
-    <style>
-    
-    #container{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
-  
-  overflow: hidden;
-}
+<article>
+  <div id="container">
+    <div id="kort"></div>
+    <div id="dots">
+      <div id="dot1" class="dotCyan"></div>
+      <div id="dot2" class="dotCyan"></div>
+      <div id="dot3" class="dotCyan"></div>
+      <div id="dot4" class="dotCyan"></div>
+      <div id="dot5" class="dotPink"></div>
+      <div id="dot6" class="dotPink"></div>
+      <div id="dot7" class="dotPink"></div>
+      <div id="dot8" class="dotPink"></div>
+    </div>
+  </div>
+</article>
+<style>
+  #container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
 
-#kort{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(kort.png);
-  background-size: 100%;
-  max-width: 100%;
-  background-repeat: no-repeat;
-}
+    overflow: hidden;
+  }
 
-#dots{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+  #kort {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../public/kort.png);
+    background-size: 100%;
+    max-width: 100%;
+    background-repeat: no-repeat;
+  }
 
-.dotCyan {
+  #dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .dotCyan {
     display: relative;
     width: 10px;
     height: 10px;
-    background-color: #00BBB6;
-    border-radius: 50%; 
-    transition: background-color 0.3s ease; 
-}
+    background-color: #00bbb6;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
 
-.dotCyan:hover, .dotPink:hover{
-    background-color: #C44C97; 
+  .dotCyan:hover,
+  .dotPink:hover {
+    background-color: #c44c97;
     cursor: pointer;
-}
+  }
 
-.dotPink {
+  .dotPink {
     display: relative;
     width: 10px;
     height: 10px;
-    background-color: #F13C52;
-    border-radius: 50%; 
-    transition: background-color 0.3s ease; 
-}
+    background-color: #f13c52;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
 
-#dot1{
+  #dot1 {
     position: relative;
     top: 35%;
     left: 30%;
-}
-#dot2{
+  }
+  #dot2 {
     position: relative;
     top: 40%;
     left: 45%;
-}
-#dot3{
+  }
+  #dot3 {
     position: relative;
     top: 60%;
     left: 34%;
-}
-#dot4{
+  }
+  #dot4 {
     position: relative;
     top: 50%;
     left: 43%;
-}
-#dot5{
+  }
+  #dot5 {
     position: relative;
     top: 25%;
     left: 32%;
-}
-#dot6{
+  }
+  #dot6 {
     position: relative;
     top: 45%;
     left: 40%;
-}
-#dot7{
+  }
+  #dot7 {
     position: relative;
     top: 33%;
     left: 38%;
-}
+  }
 
-#dot8{
+  #dot8 {
     position: relative;
     top: 20%;
     left: 50%;
-}
-    </style>
+  }
+</style>
 
-    <script>
-        window.addEventListener("load", clickDots);
+<script>
+  window.addEventListener("load", clickDots);
 
-    function clickDots() {
+  function clickDots() {
     console.log("clickDots");
-        const dots = document.querySelectorAll(".dotCyan, .dotPink");
-        dots.forEach(dot => {
-        });
-    }
-    </script>
-
-    
+    const dots = document.querySelectorAll(".dotCyan, .dotPink");
+    dots.forEach((dot) => {});
+  }
+</script>
