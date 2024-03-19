@@ -1,6 +1,7 @@
 ---
 import "../../styles/global.css";
 import MainLayout from "../../layouts/MainLayouts.astro";
+import Button from "../../components/Buttons.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfprojektDatabase", {
@@ -22,16 +23,69 @@ console.log(myData);
 ---
 
 <MainLayout title={myData.displayname}>
-  <h2>{myData.displayname}</h2><h3>{myData.neighborhood}, {myData.location}</h3>
-  <img src={myData.image} alt={myData.displayname} />
-  <h3>{myData.artist}</h3>
-  <p>{myData.text1}</p>
-  <p>{myData.text2}</p>
-  <p>{myData.text3}</p>
-  <p>{myData.text4}</p>
+  <div class="extrapadding">
+    <div class="grid1-1">
+      <div class="col1">
+        <div class="alignright">
+          <h1 class="display">{myData.displayname}</h1><h3>{myData.neighborhood}, {myData.location}</h3>
+        </div>
+        <p class="bodytext-regular">{myData.text1}</p>
+      </div>
+      <div class="col2">
+        <img src={myData.image} alt={myData.displayname} />
+      </div>
+    </div>
+    <div class="grid1-1">
+      <div class="col1">
+        KORT
+        <Button variant="primary" state="" animation="">Se forslåede ruter</Button>
+      </div><div class="col2">
+        <div class="faktabox bodytext-bold">
+          <p class="highlight">Hvem:</p><p>{myData.artist}</p><br />
+          <p class="highlight">Hvor:</p><p>{myData.location}</p><br />
+          <p class="highlight">Hvornår:</p><p>2. februar - 25. februar</p><br />
+          <p>Tak til: {myData.sponsor}</p>
+        </div>
+        <p class="bodytext-regular">{myData.text2}</p>
+      </div>
+    </div>
+    <div class="grid1-1">
+      <div class="col1"><p class="bodytext-regular">{myData.text3}</p></div>
+      <div class="col2"><p class="bodytext-regular">{myData.text4}</p></div>
+    </div>
 
-  <p>Med hjælp fra: {myData.credits}</p>
-  <p>Tak til: {myData.sponsor}</p>
-  <p>{myData.social1}</p>
-  <p>{myData.social2}</p>
+    <p>Med hjælp fra: {myData.credits}</p>
+
+    <p>{myData.social1}</p>
+    <p>{myData.social2}</p>
+  </div>
 </MainLayout>
+
+<style>
+  @media (min-width: 900px) {
+    .grid1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .extrapadding {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .alignright {
+    text-align: right;
+  }
+  .faktabox {
+    background-color: var(--background-color-15);
+    padding: 2rem;
+    color: var(--text-color);
+  }
+
+  .highlight {
+    color: var(--primary-accent);
+  }
+</style>
