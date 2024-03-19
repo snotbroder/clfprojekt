@@ -2,15 +2,19 @@
 import "../styles/global.css";
 const {pop_up} = Astro.props;
 ---
+<div class="popUpClose">
 <article class="box" >
     <div class="pop_up" >
+        <div id="close">
         <img class="ikon" src="/icons/close.svg" alt="">
+        </div>
         <h1>No. 52</h1>
         <img src="collage/pop_up.svg" alt="pop_up"> 
         <bodtext-regular>Her kan du læse lidt om kunstværket</bodtext-regular>
         <p>Læs mere her</p>
     </div>
 </article>
+</div>
 
 <style>
     .hide{
@@ -52,9 +56,8 @@ const {pop_up} = Astro.props;
     right: -120px;
     width: 20px;
     height: 25px;
-    background-image: url('path/to/your/close-icon.svg'); /* Erstat med din egen close-icon */
-    background-size: cover;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 @media screen and (min-width: 750px) {
@@ -73,15 +76,16 @@ const {pop_up} = Astro.props;
 
 <script>
     window.addEventListener("load", closePopup);
+    const closeBtn = document.querySelector("#close");
+    const closeBox = document.querySelector(".popUpClose");
 
     function closePopup() {
-    const closeBtn = document.querySelector(".ikon");
-    const closeBox = document.querySelector(".box");
+    console.log("ClosePopup");
     closeBtn.addEventListener("click", closeIcon);
 }
 
 function closeIcon() {
-    console.log("CloseIcon");
+    console.log("closeIcon");
     closeBox.classList.add("hide");
 }
 
