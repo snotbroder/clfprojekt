@@ -40,7 +40,35 @@ const {footer} = Astro.props;
 
 </footer>
 
+<footer class="footerdesktop">
+    <nav>
+    <article class="footer_icons">
+        <img src="./icons/facebook.svg" alt="facebook">
+        <img src="./icons/instagram.svg" alt="instagram">
+        <img src="./icons/youtube.svg" alt="youtube"> 
+    </article>
+    <article class="footermiddle">
+        <p>@COPENHAGEN LIGHT FESTIVAL 2024</p>
+    </article>
+    <article class="footerright">
+        <ul class="link_menu">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">PROGRAM</a></li>
+          <li><a href="#">PARTNERS</a></li>
+          <li><a href="#">OM OS</a></li>
+          <li><a href="#">KONTAKT</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+        <p>Read our cookie polices</p>
+        <p>info@copenhagenlightfestival.org | Tlf. +45 25 55 66 04 </p>
+    </article>
+      </nav>
+</footer>
+
     <style>
+        .footerdesktop {
+        display: none;
+    }
 footer {
     position: relative;
     padding-left: 1rem;
@@ -110,10 +138,71 @@ nav {
 
 /* Desktop-styling */
 @media screen and (min-width: 750px) {
- 
+    .footerdesktop {
+        display: block;
+    }
     .footermobil {
         display: none;
     }
-  
+        footer {
+    border-top: 1px solid white; /* Tilføjer en hvid streg øverst i footer */
+    margin: -20px;
+    margin-top: 20px;
+        }
+
+.footer_icons {
+    width: 30px;
+    margin-top: 15px;
+    margin-left: 60px;
+    gap: 5px;
+    display: flex; /* Anvend flexbox */
+    justify-content: center; /* Centrerer indholdet vandret */
+    align-items: center; /* Centrerer indholdet lodret */
+}
+.footermiddle {
+    position: relative; /* Gør positionen relativ for at kunne placere pseudoelementet */
+    text-align: center; /* Centrer tekst i midten */
+    margin-top:4rem; /* Sæt afstand over artiklen til auto for at placere den nederst */
+    margin-bottom: -50px; /* Justerer bundmarginen */
+}
+
+.footermiddle::before {
+    content: ""; /* Tilføjer et tomt indhold til pseudoelementet */
+    position: absolute; /* Gør positionen absolut */
+    top: -5px; /* Placerer det lige over .footer_middle */
+    left: 25%; /* Sætter startpositionen til venstre */
+    width: 50%; /* Gør bredden 100% af .footer_middle */
+    height: 0.5px; /* Sætter højden til 1px */
+    background-color: white; /* Gør stregen hvid */
+}
+
+.footerright {
+    display: flex;
+    flex-direction: column; /* Stabler indholdet i kolonneformat */
+    justify-content: flex-end; /* Placerer indholdet i bunden af artiklen */
+    align-items: flex-end; /* Justerer indholdet til højre side */
+}
+
+.link_menu {
+    display: flex; /* Placerer linkene vandret */
+    list-style: none; /* Fjerner punkttegnene foran linkene */
+    margin-top: -60px;
+    margin-bottom: 10px;
+    gap: 5px;
+    padding: 0;
+}
+
+.link_menu li {
+    margin-right: 20px; /* Tilføjer lidt mellemrum mellem linkene */
+}
+
+.link_menu li a {
+    color: white; /* Gør linkteksten hvid */
+    text-decoration: none; /* Fjerner understregningen fra linkene */
+}
+
+.link_menu li a:hover {
+    color: white; /* Bevarer linktekstens hvide farve ved hover */
+}
 }
     </style>
