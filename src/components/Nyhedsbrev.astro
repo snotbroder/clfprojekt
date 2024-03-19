@@ -1,13 +1,13 @@
 ---
 import "../styles/global.css";
 ---
-<form>
+<form class="nyhedsbrev">
 <div class="heading">
     <h3>TILMELD DIG TIL VORES NYHEDSBREV</h3>
-    <img src="/icons/close.svg" alt="">
+    <img class="ikon" src="/icons/close.svg" alt="">
 </div>
 <div class="container">
-    <input class="email bodytext-regular" type="text" placeholder="Indtast email" name="mail" required >
+    <input class="email bodytext-regular" type="email" placeholder="Indtast email" name="mail" required >
     <input type="submit" value="Tilmeld" class="bodytext-regular submit">
   </div>
 </form>
@@ -27,6 +27,7 @@ import "../styles/global.css";
         margin-bottom: 1rem;
         position: relative;
         top: 0;
+        cursor: pointer;
     }
     form{
        background-color: var(--background-color-50);
@@ -37,7 +38,7 @@ import "../styles/global.css";
        bottom:1rem;
        right:1rem;
        border: 1px solid var(--text-color);
- 
+       z-index: 1;
     }
     .email{
         padding: 0.3rem 1rem  0.3rem 1rem ;
@@ -56,11 +57,15 @@ import "../styles/global.css";
         padding: 0.3rem 0.2rem 0.3rem 0.2rem ;
         width: 100%;
         font-size: 1rem;
+        cursor: pointer;
     }
     .container{
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+    }
+    .hide{
+        display: none;
     }
     @media (min-width: 750px) {
 
@@ -87,4 +92,16 @@ import "../styles/global.css";
         width: 21%;
     }
     }
+
+    
 </style>
+
+<script>
+    const ikon = document.querySelector(".ikon");
+    const nyhedsbrev = document.querySelector(".nyhedsbrev");
+    ikon.addEventListener("mousedown", clickIkon)
+    function clickIkon (){
+        console.log("clickIkon")
+        nyhedsbrev.classList.add("hide")
+    }
+</script>

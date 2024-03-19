@@ -83,6 +83,20 @@ h3 {
   font-style: normal;
   color: var(--text-color);
 }
+/* Hyperlink */
+.hyperlink {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--primary-accent);
+  transition: 0.2s ease;
+}
+.hyperlink:hover {
+  color: var(--teritary);
+  transition: 0.2s ease;
+}
+
 main {
   margin-left: var(--mobile-L);
   margin-right: var(--mobile-L);

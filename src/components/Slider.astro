@@ -4,7 +4,7 @@ import "../styles/global.css";
 ---
 
 <article>
-    <h2>Mest Besøgte</h2>
+    <h3>MEST BESØGTE</h3>
     <div class="carousel-container">
         <img id="arrow-left" class="arrow" src="/public/icons/arrow_left.svg" alt="">
         <img class="carousel-item" src="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/03.-PiXLEarth-scaled.jpg" alt="">
@@ -17,24 +17,32 @@ import "../styles/global.css";
 </article>
 
 <style>
-    .hidden{
+    .hidden {
         display: none;
     }
-    .arrow{
-        scale: 0.4;
+
+    .arrow {
+        margin-top: -35%;
+        scale: 0.2;
     }
 
-    .arrow:hover{
+    .arrow:hover {
         cursor: pointer;
     }
 
-    img{
-        max-width: 20%;
+    .carousel-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+    }
+
+    .carousel-item {
+        aspect-ratio: 1 / 1;
+        max-width: 100%;
         border-radius: 50%;
-        height: 200px;
-        width: 200px;
+        object-fit: cover; 
     }
 </style>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
