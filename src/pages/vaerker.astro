@@ -3,6 +3,8 @@ import "../styles/global.css";
 import MainLayout from "../layouts/MainLayouts.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
+import Bydele from "../components/Bydele.astro";
+
 
 const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfprojektDatabase", {
   method: "GET",
@@ -14,6 +16,8 @@ const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfpr
 ---
 
 <MainLayout>
+  <h1>VÆRKER</h1>
+  <Bydele />
   <div class="multiview_galleri">
     {
       data.map((installation) => {
@@ -21,6 +25,7 @@ const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfpr
       })
     }
   </div>
+
 
   <!-- <div class="multiview_galleri">
     <Card titel="">
@@ -37,3 +42,9 @@ const data = await fetch("https://emsjqvuyxykavpzfimlr.supabase.co/rest/v1/clfpr
     </Card>
   </div> -->
 </MainLayout>
+
+<style>
+  h1{
+    text-align: center;
+  }
+</style>
